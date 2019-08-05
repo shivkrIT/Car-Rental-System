@@ -61,7 +61,7 @@
                           <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="AUserTf" max="32767" attributes="0"/>
-                              <Component id="APwdTf" pref="218" max="32767" attributes="0"/>
+                              <Component id="APwdPf" pref="218" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -86,7 +86,7 @@
                   <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jLabel3" max="32767" attributes="0"/>
-                      <Component id="APwdTf" max="32767" attributes="0"/>
+                      <Component id="APwdPf" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
                   <Component id="jButton1" min="-2" pref="68" max="-2" attributes="0"/>
@@ -119,7 +119,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AUserTfActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="APwdTf">
+        <Component class="javax.swing.JPasswordField" name="APwdPf">
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>

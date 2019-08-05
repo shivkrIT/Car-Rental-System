@@ -126,29 +126,6 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel8">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;body&gt;&#xa;&lt;font size=&quot;5&quot; &gt;Registered&#xa;&lt;/font&gt;&#xa;&lt;/body&gt;&#xa;&lt;/html&gt;"/>
-      </Properties>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="489" y="547" width="-1" height="-1"/>
-        </Constraint>
-      </Constraints>
-    </Component>
-    <Component class="javax.swing.JButton" name="LogInBtn">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;body&gt;&#xa;&lt;center&gt;&#xa;&lt;font size=&quot;5&quot; &gt;&lt;b&gt;LogIn for customers&lt;/b&gt;&#xa;&lt;/font&gt;&#xa;&lt;/center&gt;&#xa;&lt;/body&gt;&#xa;&lt;/html&gt;"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LogInBtnActionPerformed"/>
-      </Events>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="451" y="580" width="230" height="40"/>
-        </Constraint>
-      </Constraints>
-    </Component>
     <Component class="javax.swing.JButton" name="ExitBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;body&gt;&#xa;&lt;font size=&quot;5&quot;&gt;&lt;b&gt;Exit&lt;/b&gt;&lt;/font&gt;&#xa;&lt;/body&gt;&#xa;&lt;/html&gt;"/>
@@ -177,19 +154,34 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="318" max="-2" attributes="0"/>
-                  <Component id="AdminBtn" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="869" max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="274" max="-2" attributes="0"/>
+                          <Component id="AdminBtn" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
+                          <Component id="LogInBtn" min="-2" pref="230" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="545" max="-2" attributes="0"/>
+                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="567" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="675" max="-2" attributes="0"/>
-                  <Component id="AdminBtn" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="854" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="542" max="-2" attributes="0"/>
+                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LogInBtn" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="AdminBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="938" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -205,6 +197,19 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AdminBtnActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="LogInBtn">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;body&gt;&#xa;&lt;center&gt;&#xa;&lt;font size=&quot;5&quot; &gt;&lt;b&gt;LogIn for customers&lt;/b&gt;&#xa;&lt;/font&gt;&#xa;&lt;/center&gt;&#xa;&lt;/body&gt;&#xa;&lt;/html&gt;"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LogInBtnActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;body&gt;&#xa;&lt;font size=&quot;5&quot; &gt;Registered&#xa;&lt;/font&gt;&#xa;&lt;/body&gt;&#xa;&lt;/html&gt;"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

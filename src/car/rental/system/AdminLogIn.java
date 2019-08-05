@@ -5,6 +5,7 @@
  */
 package car.rental.system;
 
+import java.awt.event.WindowEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -34,7 +35,7 @@ public class AdminLogIn extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         AUserTf = new javax.swing.JTextField();
-        APwdTf = new javax.swing.JPasswordField();
+        APwdPf = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -80,7 +81,7 @@ public class AdminLogIn extends javax.swing.JFrame {
                         .addGap(92, 92, 92)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(AUserTf)
-                            .addComponent(APwdTf, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)))
+                            .addComponent(APwdPf, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(651, 651, 651)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -98,7 +99,7 @@ public class AdminLogIn extends javax.swing.JFrame {
                 .addGap(121, 121, 121)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3)
-                    .addComponent(APwdTf))
+                    .addComponent(APwdPf))
                 .addGap(99, 99, 99)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(645, Short.MAX_VALUE))
@@ -126,12 +127,14 @@ public class AdminLogIn extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String AUser = AUserTf.getText();
-        String APwd = APwdTf.getPassword().toString();
+        String APwd = APwdPf.getText();
         if(AUser.equals("admin") && APwd.equals("admin"))
         {
+            systemExit();
+            this.setVisible(false);
             AdminPage admin = new AdminPage();
             admin.setVisible(true);
-            this.setVisible(false);
+            
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -171,7 +174,7 @@ public class AdminLogIn extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPasswordField APwdTf;
+    private javax.swing.JPasswordField APwdPf;
     private javax.swing.JTextField AUserTf;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -179,4 +182,9 @@ public class AdminLogIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
-}
+
+    private void systemExit() {
+        WindowEvent winCloseing = new WindowEvent(this,WindowEvent.WINDOW_CLOSING);
+} //To change body of generated methods, choose Tools | Templates.
+    }
+

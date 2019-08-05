@@ -1,9 +1,14 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package car.rental.system;
 
 import java.awt.event.WindowEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
@@ -318,7 +323,8 @@ public class fifthpg extends javax.swing.JFrame {
     private void CNameCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CNameCBActionPerformed
         // TODO add your handling code here:
         if(CNameCB.getSelectedItem().toString().equals("Toyota Innova Crysta")){
-            CPDayLbl.setText("3000");
+             CPDayLbl.setText("3000");
+         
         }
        if(CNameCB.getSelectedItem().toString().equals("Mahindra Scorpio")){
             CPDayLbl.setText("4000");

@@ -39,11 +39,11 @@ public class firstPage extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         SignUpbtn = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        LogInBtn = new javax.swing.JButton();
         ExitBtn = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         AdminBtn = new javax.swing.JButton();
+        LogInBtn = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(java.awt.Color.white);
@@ -91,19 +91,6 @@ public class firstPage extends javax.swing.JFrame {
         getContentPane().add(SignUpbtn);
         SignUpbtn.setBounds(75, 580, 114, 40);
 
-        jLabel8.setText("<html>\n<body>\n<font size=\"5\" >Registered\n</font>\n</body>\n</html>");
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(489, 547, 88, 22);
-
-        LogInBtn.setText("<html>\n<body>\n<center>\n<font size=\"5\" ><b>LogIn for customers</b>\n</font>\n</center>\n</body>\n</html>");
-        LogInBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LogInBtnActionPerformed(evt);
-            }
-        });
-        getContentPane().add(LogInBtn);
-        LogInBtn.setBounds(451, 580, 230, 40);
-
         ExitBtn.setText("<html>\n<body>\n<font size=\"5\"><b>Exit</b></font>\n</body>\n</html>");
         ExitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,21 +110,41 @@ public class firstPage extends javax.swing.JFrame {
             }
         });
 
+        LogInBtn.setText("<html>\n<body>\n<center>\n<font size=\"5\" ><b>LogIn for customers</b>\n</font>\n</center>\n</body>\n</html>");
+        LogInBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogInBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("<html>\n<body>\n<font size=\"5\" >Registered\n</font>\n</body>\n</html>");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(318, 318, 318)
-                .addComponent(AdminBtn)
-                .addContainerGap(869, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(274, 274, 274)
+                        .addComponent(AdminBtn)
+                        .addGap(116, 116, 116)
+                        .addComponent(LogInBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(545, 545, 545)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(567, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(675, 675, 675)
-                .addComponent(AdminBtn)
-                .addContainerGap(854, Short.MAX_VALUE))
+                .addGap(542, 542, 542)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LogInBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AdminBtn))
+                .addContainerGap(938, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1);

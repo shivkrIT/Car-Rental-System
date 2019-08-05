@@ -5,6 +5,8 @@
  */
 package car.rental.system;
 
+import java.awt.event.WindowEvent;
+
 /**
  *
  * @author Dell
@@ -27,21 +29,139 @@ public class AdminPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        ViewBtn = new javax.swing.JButton();
+        UpdateBtn = new javax.swing.JButton();
+        HomeBtn = new javax.swing.JButton();
+        DeleteBtn = new javax.swing.JButton();
+
+        jLabel3.setText("jLabel3");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 255));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/car/rental/system/img9.png"))); // NOI18N
+
+        ViewBtn.setText("<html> <body> <p><font face = \"Comic Sans MS\" size=\"5\"><b>VIEW DETAIL</b></font> </body> </html>");
+        ViewBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewBtnActionPerformed(evt);
+            }
+        });
+
+        UpdateBtn.setText("<html> <body> <p><font face = \"Comic Sans MS\" size=\"5\"><b>UPDATE DETAIL</b></font> </body> </html>");
+        UpdateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateBtnActionPerformed(evt);
+            }
+        });
+
+        HomeBtn.setText("<html> <body> <p><font face = \"Comic Sans MS\" size=\"5\"><b>HOME</b></font> </body> </html>");
+        HomeBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HomeBtnActionPerformed(evt);
+            }
+        });
+
+        DeleteBtn.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        DeleteBtn.setText("DELETE DETAIL");
+        DeleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ViewBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(321, 321, 321)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(HomeBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DeleteBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(243, 243, 243))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel1)
+                .addGap(55, 55, 55)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ViewBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(HomeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(165, 165, 165))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(185, 185, 185)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(101, 101, 101))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewBtnActionPerformed
+        // TODO add your handling code here:
+        systemExit();
+        this.setVisible(false);
+            ViewPage admin = new ViewPage();
+            admin.setVisible(true);
+        
+    }//GEN-LAST:event_ViewBtnActionPerformed
+
+    private void UpdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateBtnActionPerformed
+        // TODO add your handling code here:
+         systemExit();
+        this.setVisible(false);
+            UpdatePage admin = new UpdatePage();
+            admin.setVisible(true);
+    }//GEN-LAST:event_UpdateBtnActionPerformed
+
+    private void HomeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeBtnActionPerformed
+        // TODO add your handling code here:
+         systemExit();
+        this.setVisible(false);
+            firstPage admin = new firstPage();
+            admin.setVisible(true);
+    }//GEN-LAST:event_HomeBtnActionPerformed
+
+    private void DeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBtnActionPerformed
+        // TODO add your handling code here:
+        systemExit();
+        this.setVisible(false);
+            DeletePage del = new DeletePage();
+            del.setVisible(true);
+    }//GEN-LAST:event_DeleteBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,7 +197,18 @@ public class AdminPage extends javax.swing.JFrame {
             }
         });
     }
+    private void systemExit(){
+WindowEvent winCloseing = new WindowEvent(this,WindowEvent.WINDOW_CLOSING);
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton DeleteBtn;
+    private javax.swing.JButton HomeBtn;
+    private javax.swing.JButton UpdateBtn;
+    private javax.swing.JButton ViewBtn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

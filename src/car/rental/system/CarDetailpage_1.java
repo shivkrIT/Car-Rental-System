@@ -1,8 +1,4 @@
-package car.rental.system;/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+package car.rental.system;
 import java.awt.event.WindowEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,22 +7,26 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
+import javax.swing.table.TableModel;/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 /**
  *
  * @author Amit
  */
-public class UserDetailpage extends javax.swing.JFrame {
+public class CarDetailpage_1 extends javax.swing.JFrame {
 
     /**
-     * Creates new form UserDetailpage
+     * Creates new form CarDetailpage
      */
-     public void loaddata()
+    public void loaddata()
      {
-        DefaultTableModel model=(DefaultTableModel)Table.getModel(); //Error dhundne ke liye alt+enter likhenge
-         Table.setModel(model);
-           Object row[]=new Object[8];
+        DefaultTableModel model=(DefaultTableModel)CarTable.getModel(); //Error dhundne ke liye alt+enter likhenge
+         CarTable.setModel(model);
+           Object row[]=new Object[5];
            try{
              
              Connection con =getConnection();
@@ -35,17 +35,14 @@ public class UserDetailpage extends javax.swing.JFrame {
             stmt=con.createStatement();//Executes database
             
             
-            String qry1 = "Select * from register";
+            String qry1 = "Select * from car_details";
             res=stmt.executeQuery(qry1);
             while(res.next())//res=-1 initially
             {
-              row[0]=res.getString("UName");
-              row[1]=res.getString("Contact");
-              row[2]=res.getString("Email");
-              row[3]=res.getString("Address");
-              row[4]=res.getString("Aadhar");
-              row[5]=res.getString("License");
-              row[6]=res.getString("Pwd");
+              row[0]=res.getString("name");
+              row[1]=res.getString("type_of_car");
+              row[2]=res.getInt("Cost_per_day");
+              row[3]=res.getInt("Total_car");
               model.addRow(row);
            }
            }
@@ -54,15 +51,7 @@ public class UserDetailpage extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,ex.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
           }
      }
-     private static Connection getConnection()throws ClassNotFoundException,SQLException{
-	Class.forName("com.mysql.cj.jdbc.Driver");
-     String url="jdbc:mysql://localhost:3306/CRS?allowPublicKeyRetrieval=true&useSSL=false";
-	Connection con =DriverManager.getConnection(url, "root", "1234");
-
-	return con;
-}
-    
-    public UserDetailpage() {
+    public CarDetailpage_1() {
         initComponents();
     }
 
@@ -75,35 +64,37 @@ public class UserDetailpage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField4 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Table = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
+        CarTable = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
+        jTextField4.setText("jTextField4");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(102, 102, 102));
+        setBackground(new java.awt.Color(0, 153, 255));
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel1.setForeground(new java.awt.Color(255, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
 
-        Table.setModel(new javax.swing.table.DefaultTableModel(
+        CarTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Uname", "Contact", "Email", "Address", "Aadhar", "License", "password"
+                "Name", "Type of Car", "Cost Per Day", "Total Cars"
             }
         ));
-        jScrollPane1.setViewportView(Table);
+        jScrollPane1.setViewportView(CarTable);
 
-        jLabel1.setFont(new java.awt.Font("Algerian", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 153, 153));
-        jLabel1.setText("<html> <body> <p><font size = \"30\" face=\"Algerian\" >User Detail </font> </p> </body> </html>");
+        jLabel5.setFont(new java.awt.Font("Algerian", 1, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 153, 153));
+        jLabel5.setText("<html> <body> <p> Car Detail  </p> </body> </html>");
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton1.setText("Back");
@@ -113,7 +104,7 @@ public class UserDetailpage extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/car/rental/system/user.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/car/rental/system/carss.PNG"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -122,42 +113,44 @@ public class UserDetailpage extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(322, 322, 322)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(74, 74, 74)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(530, 530, 530)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(158, 158, 158)
+                        .addComponent(jLabel2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 715, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(242, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(248, 248, 248)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(159, 159, 159))
+                        .addGap(242, 242, 242)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(225, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(182, 182, 182))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
-                        .addContainerGap(85, Short.MAX_VALUE))))
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(101, 101, 101)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(131, 131, 131)
+                        .addComponent(jLabel2)))
+                .addGap(85, 85, 85)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(348, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,34 +185,45 @@ public class UserDetailpage extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UserDetailpage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CarDetailpage_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UserDetailpage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CarDetailpage_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UserDetailpage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CarDetailpage_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UserDetailpage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CarDetailpage_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UserDetailpage().setVisible(true);
-                
+                new CarDetailpage_1().setVisible(true);
             }
         });
     }
-    private void systemExit(){
+         private static Connection getConnection()throws ClassNotFoundException,SQLException{
+
+    	Class.forName("com.mysql.cj.jdbc.Driver");
+     String url="jdbc:mysql://localhost:3306/CRS?allowPublicKeyRetrieval=true&useSSL=false";
+	Connection con =DriverManager.getConnection(url, "root", "1234");
+
+	return con;
+}
+         private void systemExit(){
 WindowEvent winCloseing = new WindowEvent(this,WindowEvent.WINDOW_CLOSING);
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable Table;
+    private javax.swing.JTable CarTable;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
+
+    
 }
